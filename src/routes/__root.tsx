@@ -85,14 +85,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Bestline Business Funding helps businesses access fast working capital, revenue-based financing, SBA loans, lines of credit and more — with long-term funding support.",
       },
       { property: "og:title", content: "Bestline Business Funding | Commercial Finance Solutions" },
-      { property: "og:description", content: "Bestline Business Funding offers diverse commercial finance solutions for business growth." },
+      {
+        property: "og:description",
+        content:
+          "Bestline Business Funding offers diverse commercial finance solutions for business growth.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Bestline Business Funding | Commercial Finance Solutions" },
-      { name: "description", content: "Bestline Business Funding offers diverse commercial finance solutions for business growth." },
-      { name: "twitter:description", content: "Bestline Business Funding offers diverse commercial finance solutions for business growth." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4accabad-be9e-475c-b845-ba6c3db9d1a2/id-preview-8161cac0--9e2ae3f6-d499-48b9-b3e9-1b56fcde0448.lovable.app-1782846215156.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4accabad-be9e-475c-b845-ba6c3db9d1a2/id-preview-8161cac0--9e2ae3f6-d499-48b9-b3e9-1b56fcde0448.lovable.app-1782846215156.png" },
+      {
+        name: "twitter:title",
+        content: "Bestline Business Funding | Commercial Finance Solutions",
+      },
+      {
+        name: "description",
+        content:
+          "Bestline Business Funding offers diverse commercial finance solutions for business growth.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Bestline Business Funding offers diverse commercial finance solutions for business growth.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4accabad-be9e-475c-b845-ba6c3db9d1a2/id-preview-8161cac0--9e2ae3f6-d499-48b9-b3e9-1b56fcde0448.lovable.app-1782846215156.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4accabad-be9e-475c-b845-ba6c3db9d1a2/id-preview-8161cac0--9e2ae3f6-d499-48b9-b3e9-1b56fcde0448.lovable.app-1782846215156.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

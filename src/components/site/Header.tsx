@@ -33,8 +33,18 @@ export function Header() {
       ].join(" ")}
     >
       <div className="container-page flex h-20 md:h-24 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2 shrink-0" aria-label="Bestline Business Funding home">
-          <img src={logo} alt="Bestline Business Funding" width={1280} height={512} className="h-14 md:h-16 w-auto" />
+        <Link
+          to="/"
+          className="flex items-center gap-2 shrink-0"
+          aria-label="Bestline Business Funding home"
+        >
+          <img
+            src={logo}
+            alt="Bestline Business Funding"
+            width={1280}
+            height={512}
+            className="h-14 md:h-16 w-auto"
+          />
         </Link>
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[18px] font-semibold text-foreground/85">
           {nav.map((n) => (

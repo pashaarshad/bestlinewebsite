@@ -17,8 +17,10 @@ const footerProducts = [
 ];
 
 const slugify = (s: string) =>
-  s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-
+  s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 
 export function Footer() {
   return (
@@ -40,14 +42,40 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-primary-foreground">Quick Links</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-wider text-primary-foreground">
+            Quick Links
+          </h4>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
-            <li><Link to="/" className="hover:text-white">Home</Link></li>
-            <li><Link to="/how-it-works" className="hover:text-white">How It Works</Link></li>
-            <li><Link to="/why-bestline" className="hover:text-white">Why Bestline</Link></li>
-            <li><Link to="/partner" className="hover:text-white">Partner With Us</Link></li>
-            <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
-            <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
+            <li>
+              <Link to="/" className="hover:text-white">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/how-it-works" className="hover:text-white">
+                How It Works
+              </Link>
+            </li>
+            <li>
+              <Link to="/why-bestline" className="hover:text-white">
+                Why Bestline
+              </Link>
+            </li>
+            <li>
+              <Link to="/partner" className="hover:text-white">
+                Partner With Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/faq" className="hover:text-white">
+                FAQ
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-white">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
@@ -55,7 +83,9 @@ export function Footer() {
           <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-primary-foreground/75">
             {footerProducts.map((p) => (
               <li key={p}>
-                <Link to="/funding-products" hash={slugify(p)} className="hover:text-white">{p}</Link>
+                <Link to="/funding-products" hash={slugify(p)} className="hover:text-white">
+                  {p}
+                </Link>
               </li>
             ))}
           </ul>
@@ -66,8 +96,12 @@ export function Footer() {
         <div className="container-page flex flex-col gap-3 py-6 md:flex-row md:items-center md:justify-between text-xs text-primary-foreground/60">
           <p>© {new Date().getFullYear()} Bestline Business Funding. All rights reserved.</p>
           <div className="flex gap-5">
-            <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white">Terms &amp; Conditions</Link>
+            <Link to="/privacy" className="hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="hover:text-white">
+              Terms &amp; Conditions
+            </Link>
           </div>
         </div>
       </div>

@@ -14,7 +14,6 @@ import {
   CheckCircle2,
   FileCheck2,
   Clock,
-
 } from "lucide-react";
 
 import heroWoman from "@/assets/hero-woman.png.asset.json";
@@ -23,7 +22,6 @@ import productsWoman from "@/assets/products-woman.png.asset.json";
 import { Layout } from "@/components/site/Layout";
 import { getProductIcon } from "@/lib/product-icons";
 import { getProductBadges } from "@/lib/product-details";
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,7 +35,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Bestline Business Funding" },
       {
         property: "og:description",
-        content: "Funding options up to $5,000,000 — revenue-based financing, SBA loans, lines of credit, term loans and more.",
+        content:
+          "Funding options up to $5,000,000 — revenue-based financing, SBA loans, lines of credit, term loans and more.",
       },
     ],
   }),
@@ -86,25 +85,71 @@ const whyCards = [
 ];
 
 const products = [
-  { title: "SBA Loans", text: "Government-backed financing for qualified businesses seeking longer terms." },
-  { title: "Term Loans", text: "Structured financing with fixed repayment terms for growth or operations." },
-  { title: "Business Line of Credit", text: "Revolving capital — draw only what your business needs." },
-  { title: "Bridge Loans", text: "Short-term capital while awaiting SBA funding or other capital events." },
-  { title: "Equipment Financing", text: "Purchase, lease, or upgrade equipment while preserving working capital." },
-  { title: "Invoice Factoring", text: "Turn outstanding invoices into working capital to improve cash flow." },
-  { title: "Revenue-Based Financing", text: "Fast working capital based on business revenue and cash flow." },
-  { title: "Working Capital Funding", text: "Flexible capital for payroll, inventory, marketing, or cash-flow gaps." },
+  {
+    title: "SBA Loans",
+    text: "Government-backed financing for qualified businesses seeking longer terms.",
+  },
+  {
+    title: "Term Loans",
+    text: "Structured financing with fixed repayment terms for growth or operations.",
+  },
+  {
+    title: "Business Line of Credit",
+    text: "Revolving capital — draw only what your business needs.",
+  },
+  {
+    title: "Bridge Loans",
+    text: "Short-term capital while awaiting SBA funding or other capital events.",
+  },
+  {
+    title: "Equipment Financing",
+    text: "Purchase, lease, or upgrade equipment while preserving working capital.",
+  },
+  {
+    title: "Invoice Factoring",
+    text: "Turn outstanding invoices into working capital to improve cash flow.",
+  },
+  {
+    title: "Revenue-Based Financing",
+    text: "Fast working capital based on business revenue and cash flow.",
+  },
+  {
+    title: "Working Capital Funding",
+    text: "Flexible capital for payroll, inventory, marketing, or cash-flow gaps.",
+  },
   { title: "Micro Loans", text: "Smaller funding options for specific short-term business needs." },
   { title: "Startup Business Funding", text: "Funding guidance and options for newer businesses." },
-  { title: "Commercial Real Estate Loans", text: "Financing for property purchase, refinance, or expansion." },
-  { title: "Business Debt Consolidation", text: "Review current obligations and explore more manageable structures." },
+  {
+    title: "Commercial Real Estate Loans",
+    text: "Financing for property purchase, refinance, or expansion.",
+  },
+  {
+    title: "Business Debt Consolidation",
+    text: "Review current obligations and explore more manageable structures.",
+  },
 ];
 
 const steps = [
-  { icon: FileText, title: "Submit Application", text: "Complete a simple business funding request form." },
-  { icon: Upload, title: "Upload Documents", text: "Provide basic items such as recent business bank statements." },
-  { icon: Search, title: "Review Options", text: "Our team reviews your profile and presents available options." },
-  { icon: Banknote, title: "Get Funded", text: "Once approved and completed, funding can move quickly." },
+  {
+    icon: FileText,
+    title: "Submit Application",
+    text: "Complete a simple business funding request form.",
+  },
+  {
+    icon: Upload,
+    title: "Upload Documents",
+    text: "Provide basic items such as recent business bank statements.",
+  },
+  {
+    icon: Search,
+    title: "Review Options",
+    text: "Our team reviews your profile and presents available options.",
+  },
+  {
+    icon: Banknote,
+    title: "Get Funded",
+    text: "Once approved and completed, funding can move quickly.",
+  },
 ];
 
 function Home() {
@@ -117,7 +162,9 @@ function Home() {
           <div className="mb-6 md:mb-8 lg:mb-10 text-center">
             <p
               className="text-[#7A1E2C] text-[34px] sm:text-[40px] md:text-[44px] lg:text-[48px] xl:text-[52px] font-extrabold uppercase tracking-[0.06em] leading-[1.05]"
-              style={{ fontFamily: '"Montserrat", "Plus Jakarta Sans", "Inter", system-ui, sans-serif' }}
+              style={{
+                fontFamily: '"Montserrat", "Plus Jakarta Sans", "Inter", system-ui, sans-serif',
+              }}
             >
               “YOUR LONG TERM FINANCE PARTNER”
             </p>
@@ -126,96 +173,118 @@ function Home() {
           <div className="grid gap-10 lg:gap-12 xl:gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center">
             {/* LEFT: Content, vertically centered */}
             <div className="flex flex-col justify-center max-w-xl xl:max-w-2xl">
-            <h1 className="mt-5 md:mt-6 text-lg md:text-xl lg:text-[1.65rem] xl:text-[1.95rem] leading-[1.5] md:leading-[1.55] text-foreground">
-              <span className="block mb-4 md:mb-5 text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
-                We’re NOT Looking to Get You Money Just One Time...
-              </span>
-              <span className="block mb-4 md:mb-5 text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
-                We Want to Be Your Long Term Finance Partner...
-              </span>
-              <span className="block mb-4 md:mb-5 text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
-                And Build a Relationship With You
-              </span>
-              <span className="block text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
-                <span className="block">So We Can Get You Money</span>
-                <span className="block">Whenever You Need It.</span>
-              </span>
-            </h1>
-            <p className="mt-8 md:mt-10 text-left text-[16px] md:text-[17px] font-bold text-[#A62D3D] leading-snug whitespace-nowrap">
-              ***We want to help you grow your business and increase your revenue
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-card transition hover:bg-primary-deep"
-              >
-                Speak With a Specialist <ArrowRight className="size-4" />
-              </Link>
+              <h1 className="mt-5 md:mt-6 text-lg md:text-xl lg:text-[1.65rem] xl:text-[1.95rem] leading-[1.5] md:leading-[1.55] text-foreground">
+                <span className="block mb-4 md:mb-5 text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
+                  We’re NOT Looking to Get You Money Just One Time...
+                </span>
+                <span className="block mb-4 md:mb-5 text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
+                  We Want to Be Your Long Term Finance Partner...
+                </span>
+                <span className="block mb-4 md:mb-5 text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
+                  And Build a Relationship With You
+                </span>
+                <span className="block text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
+                  <span className="block">So We Can Get You Money</span>
+                  <span className="block">Whenever You Need It.</span>
+                </span>
+              </h1>
+              <p className="mt-8 md:mt-10 text-left text-[16px] md:text-[17px] font-bold text-[#A62D3D] leading-snug whitespace-nowrap">
+                ***We want to help you grow your business and increase your revenue
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-card transition hover:bg-primary-deep"
+                >
+                  Speak With a Specialist <ArrowRight className="size-4" />
+                </Link>
+              </div>
             </div>
-          </div>
 
-          {/* RIGHT: Unified image + cards module */}
-          <div className="relative">
-            {/* Soft shared background glow */}
-            <div aria-hidden className="pointer-events-none absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-primary/5 via-transparent to-accent/10 blur-xl" />
-            <div aria-hidden className="pointer-events-none absolute -top-4 -right-4 h-32 w-32 rounded-full bg-primary/10 blur-2xl" />
-            <div aria-hidden className="pointer-events-none absolute -bottom-4 -left-4 h-28 w-28 rounded-full bg-accent/20 blur-2xl" />
+            {/* RIGHT: Unified image + cards module */}
+            <div className="relative">
+              {/* Soft shared background glow */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-primary/5 via-transparent to-accent/10 blur-xl"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -top-4 -right-4 h-32 w-32 rounded-full bg-primary/10 blur-2xl"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -bottom-4 -left-4 h-28 w-28 rounded-full bg-accent/20 blur-2xl"
+              />
 
-            {/* Unified module: shared panel wrapping image + cards */}
-            <div className="relative rounded-[2rem] border border-border/70 bg-background/60 backdrop-blur-sm p-3 sm:p-4 shadow-elevated">
-              <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-3 sm:gap-3.5 items-stretch">
-                {/* Image card */}
-                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#EEF3F7] to-[#F7F8FC] shadow-card border border-border/60 aspect-[4/5] sm:aspect-auto sm:min-h-[480px] flex items-end justify-center">
-                  <div aria-hidden className="absolute -right-10 top-8 h-48 w-48 rounded-[2rem] bg-primary/10 rotate-12" />
-                  <div aria-hidden className="absolute -left-8 -bottom-10 h-36 w-36 rounded-full bg-primary-deep/15" />
-                  <img
-                    src={heroWoman.url}
-                    alt="Bestline business funding specialist reviewing options on a tablet"
-                    className="relative h-full w-full object-cover object-top"
-                  />
-                </div>
-
-                {/* Cards stack - equal spacing, matches image height */}
-                <div className="grid grid-rows-4 gap-3 sm:gap-3.5">
-                  {/* Card 1 */}
-                  <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
-                    <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
-                      <TrendingUp className="size-5" strokeWidth={1.75} />
-                    </div>
-                    <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">Available Up To $20M</p>
+              {/* Unified module: shared panel wrapping image + cards */}
+              <div className="relative rounded-[2rem] border border-border/70 bg-background/60 backdrop-blur-sm p-3 sm:p-4 shadow-elevated">
+                <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-3 sm:gap-3.5 items-stretch">
+                  {/* Image card */}
+                  <div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#EEF3F7] to-[#F7F8FC] shadow-card border border-border/60 aspect-[4/5] sm:aspect-auto sm:min-h-[480px] flex items-end justify-center">
+                    <div
+                      aria-hidden
+                      className="absolute -right-10 top-8 h-48 w-48 rounded-[2rem] bg-primary/10 rotate-12"
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute -left-8 -bottom-10 h-36 w-36 rounded-full bg-primary-deep/15"
+                    />
+                    <img
+                      src={heroWoman.url}
+                      alt="Bestline business funding specialist reviewing options on a tablet"
+                      className="relative h-full w-full object-cover object-top"
+                    />
                   </div>
 
-                  {/* Card 2 */}
-                  <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
-                    <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
-                      <Clock className="size-5" strokeWidth={1.75} />
+                  {/* Cards stack - equal spacing, matches image height */}
+                  <div className="grid grid-rows-4 gap-3 sm:gap-3.5">
+                    {/* Card 1 */}
+                    <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
+                      <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
+                        <TrendingUp className="size-5" strokeWidth={1.75} />
+                      </div>
+                      <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">
+                        Available Up To $20M
+                      </p>
                     </div>
-                    <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">Terms Up To 25 Years</p>
-                  </div>
 
-                  {/* Card 3 */}
-                  <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
-                    <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
-                      <Zap className="size-5" strokeWidth={1.75} />
+                    {/* Card 2 */}
+                    <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
+                      <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
+                        <Clock className="size-5" strokeWidth={1.75} />
+                      </div>
+                      <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">
+                        Terms Up To 25 Years
+                      </p>
                     </div>
-                    <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">Fast Approvals</p>
-                  </div>
 
-                  {/* Card 4 */}
-                  <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
-                    <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
-                      <FileCheck2 className="size-5" strokeWidth={1.75} />
+                    {/* Card 3 */}
+                    <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
+                      <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
+                        <Zap className="size-5" strokeWidth={1.75} />
+                      </div>
+                      <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">
+                        Fast Approvals
+                      </p>
                     </div>
-                    <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">Minimal Documentation</p>
+
+                    {/* Card 4 */}
+                    <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
+                      <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
+                        <FileCheck2 className="size-5" strokeWidth={1.75} />
+                      </div>
+                      <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">
+                        Minimal Documentation
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
+      </section>
 
       {/* TRUST BAR */}
       <section className="border-y border-border bg-background">
@@ -224,12 +293,13 @@ function Home() {
             <div key={t} className="flex items-center gap-2.5">
               <span className="text-black">*</span>
               <span>{t}</span>
-              {i < trustItems.length - 1 && <span className="hidden md:inline w-px h-3.5 bg-border ml-4" />}
+              {i < trustItems.length - 1 && (
+                <span className="hidden md:inline w-px h-3.5 bg-border ml-4" />
+              )}
             </div>
           ))}
         </div>
       </section>
-
 
       {/* WHY */}
       <section className="bg-gradient-soft py-10 md:py-12">
@@ -241,13 +311,17 @@ function Home() {
                 <div className="max-w-2xl">
                   <h2 className="text-3xl md:text-4xl font-bold">Why Businesses Choose Bestline</h2>
                   <p className="mt-4">
-                    A relationship-based commercial finance partner — built around how business owners actually access and grow capital.
+                    A relationship-based commercial finance partner — built around how business
+                    owners actually access and grow capital.
                   </p>
                 </div>
                 <div className="mt-6" />
               </div>
               <div className="relative flex-1">
-                <div aria-hidden className="pointer-events-none absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-primary/5 via-transparent to-accent/10 blur-xl" />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-primary/5 via-transparent to-accent/10 blur-xl"
+                />
                 <div className="relative h-full rounded-[2rem] border border-border/70 bg-background/60 backdrop-blur-sm p-3 sm:p-4 shadow-elevated">
                   <div className="relative h-full rounded-2xl overflow-hidden shadow-card border border-border/60 aspect-[4/5] lg:aspect-auto">
                     <img
@@ -263,32 +337,37 @@ function Home() {
             {/* RIGHT: Content + cards */}
             <div className="flex flex-col">
               <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">Why Businesses Choose Bestline</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                  Why Businesses Choose Bestline
+                </h2>
                 <div aria-hidden className="mt-2.5 h-1 w-16 rounded-full bg-[#A62D3D]" />
                 <p className="mt-4 text-muted-foreground">
-                  A relationship-based commercial finance partner — built around how business owners actually access and grow capital.
+                  A relationship-based commercial finance partner — built around how business owners
+                  actually access and grow capital.
                 </p>
               </div>
               <div className="mt-6 flex-1 grid gap-4 sm:grid-cols-2 auto-rows-fr">
                 {whyCards.map(({ icon: Icon, title, text }) => (
-                  <div key={title} className="group flex flex-col justify-center rounded-xl border border-border bg-background px-5 py-5 shadow-card transition hover:-translate-y-0.5 hover:shadow-elevated">
+                  <div
+                    key={title}
+                    className="group flex flex-col justify-center rounded-xl border border-border bg-background px-5 py-5 shadow-card transition hover:-translate-y-0.5 hover:shadow-elevated"
+                  >
                     <div className="flex items-center gap-3">
                       <div className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#A62D3D] text-white">
                         <Icon className="size-4" />
                       </div>
-                      <h3 className="text-base font-semibold text-foreground leading-snug">{title}</h3>
+                      <h3 className="text-base font-semibold text-foreground leading-snug">
+                        {title}
+                      </h3>
                     </div>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{text}</p>
                   </div>
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </section>
-
-
 
       {/* WHITE STRIP DIVIDER */}
       <div className="h-6 bg-background" aria-hidden="true" />
@@ -302,7 +381,8 @@ function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">Products We Offer</h2>
               <div aria-hidden className="mt-2.5 h-1 w-16 rounded-full bg-[#A62D3D]" />
               <p className="mt-4 text-[15px] md:text-base text-muted-foreground leading-relaxed max-w-[520px]">
-                Explore flexible funding options designed to help businesses access capital, improve cash flow, and plan for growth.
+                Explore flexible funding options designed to help businesses access capital, improve
+                cash flow, and plan for growth.
               </p>
 
               {/* Inline highlight row — circular icon + two-line label */}
@@ -311,15 +391,23 @@ function Home() {
                   { icon: CheckCircle2, label: "90% Approval Rate", sub: "High approval success" },
                   { icon: Clock, label: "Accept Every Industry", sub: "Most industries welcome" },
                   { icon: ShieldCheck, label: "Soft Credit Pull", sub: "No hard credit impact" },
-                  { icon: TrendingUp, label: "Credit Not An Issue", sub: "Funding for all profiles" },
+                  {
+                    icon: TrendingUp,
+                    label: "Credit Not An Issue",
+                    sub: "Funding for all profiles",
+                  },
                 ].map(({ icon: Icon, label, sub }) => (
                   <div key={label} className="flex items-center gap-3.5 min-w-0">
                     <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-[#A62D3D] text-white">
                       <Icon className="size-5" strokeWidth={2} />
                     </div>
                     <div className="min-w-0">
-                      <p className="text-base md:text-lg font-bold text-foreground leading-tight">{label}</p>
-                      <p className="text-sm md:text-[15px] text-muted-foreground leading-tight">{sub}</p>
+                      <p className="text-base md:text-lg font-bold text-foreground leading-tight">
+                        {label}
+                      </p>
+                      <p className="text-sm md:text-[15px] text-muted-foreground leading-tight">
+                        {sub}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -328,7 +416,10 @@ function Home() {
 
             {/* RIGHT: Image aligned with left content */}
             <div className="relative">
-              <div aria-hidden className="pointer-events-none absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-primary/5 via-transparent to-accent/10 blur-xl" />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-primary/5 via-transparent to-accent/10 blur-xl"
+              />
               <div className="relative h-full rounded-[2rem] border border-border/70 bg-background/60 backdrop-blur-sm p-3 sm:p-4 shadow-elevated">
                 <div className="relative h-full rounded-2xl overflow-hidden shadow-card border border-border/60 aspect-[4/3] md:aspect-[16/10] lg:aspect-auto">
                   <img
@@ -341,47 +432,55 @@ function Home() {
             </div>
           </div>
 
-
-
           <div className="mt-8 md:mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-
-
             {products.map((p) => {
               const Icon = getProductIcon(p.title);
               const badges = getProductBadges(p.title);
               return (
-              <article key={p.title} className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-elevated">
-                <div className="flex items-center gap-3">
-                  <div className="inline-flex size-10 items-center justify-center rounded-lg bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30 transition group-hover:bg-[#A62D3D]/90">
-                    <Icon className="size-5" strokeWidth={1.75} />
+                <article
+                  key={p.title}
+                  className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-elevated"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="inline-flex size-10 items-center justify-center rounded-lg bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30 transition group-hover:bg-[#A62D3D]/90">
+                      <Icon className="size-5" strokeWidth={1.75} />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground">{p.title}</h3>
                   </div>
-                  <h3 className="text-lg font-bold text-foreground">{p.title}</h3>
-                </div>
-                {badges.length > 0 && (
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {badges.map((b) => (
-                      <span
-                        key={b.label}
-                        className="inline-flex items-center whitespace-nowrap rounded-full bg-primary px-2 py-1 text-xs font-semibold text-primary-foreground"
-                      >
-                        {b.label}
-                      </span>
-                    ))}
+                  {badges.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-1.5">
+                      {badges.map((b) => (
+                        <span
+                          key={b.label}
+                          className="inline-flex items-center whitespace-nowrap rounded-full bg-primary px-2 py-1 text-xs font-semibold text-primary-foreground"
+                        >
+                          {b.label}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.text}</p>
+                  <div className="mt-auto pt-5 flex items-center gap-4 text-sm">
+                    <Link
+                      to="/funding-products"
+                      className="font-semibold text-primary hover:underline"
+                    >
+                      Learn More
+                    </Link>
+                    <span className="text-border">•</span>
+                    <Link
+                      to="/contact"
+                      className="font-semibold text-foreground hover:text-primary"
+                    >
+                      Contact Us
+                    </Link>
                   </div>
-                )}
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.text}</p>
-                <div className="mt-auto pt-5 flex items-center gap-4 text-sm">
-                  <Link to="/funding-products" className="font-semibold text-primary hover:underline">Learn More</Link>
-                  <span className="text-border">•</span>
-                  <Link to="/contact" className="font-semibold text-foreground hover:text-primary">Contact Us</Link>
-                </div>
-              </article>
+                </article>
               );
             })}
           </div>
         </div>
       </section>
-
 
       {/* WHITE STRIP DIVIDER */}
       <div className="h-6 bg-background" aria-hidden="true" />
@@ -390,7 +489,9 @@ function Home() {
       <section className="py-20 bg-gradient-soft">
         <div className="container-page">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Simple Funding Process</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Simple Funding Process
+            </h2>
             <div aria-hidden className="mt-2.5 h-1 w-16 rounded-full bg-[#A62D3D]" />
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -410,21 +511,25 @@ function Home() {
         </div>
       </section>
 
-
       {/* CTA */}
       <section className="py-16 bg-background">
         <div className="container-page rounded-2xl border border-border bg-gradient-soft p-10 md:p-14 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Ready to explore your funding options?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            Ready to explore your funding options?
+          </h2>
           <div aria-hidden className="mt-2.5 h-1 w-16 rounded-full bg-[#A62D3D] mx-auto" />
           <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-            Submit a quick application and a Bestline funding specialist will review available options for your business.
+            Submit a quick application and a Bestline funding specialist will review available
+            options for your business.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-deep">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-deep"
+            >
               Contact a Specialist <ArrowRight className="size-4" />
             </Link>
           </div>
-
         </div>
       </section>
     </Layout>
