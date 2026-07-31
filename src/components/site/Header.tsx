@@ -1,9 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoAsset from "@/assets/bestline-logo-header.png.asset.json";
-
-const logo = logoAsset.url;
+import logo from "@/assets/bestline-logo-header.png";
 
 const nav = [
   { to: "/", label: "Home" },
