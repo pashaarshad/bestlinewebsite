@@ -162,11 +162,10 @@ function Home() {
     <Layout>
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#F8FAFC]">
-        {/* Diagonal split background for large screens */}
+        {/* Shaded split background for large screens */}
         <div
           className="absolute inset-y-0 right-0 hidden lg:block lg:w-[57%] xl:w-[54%] z-0"
           style={{
-            clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0% 100%)",
             backgroundImage: `url(${heroBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -174,11 +173,13 @@ function Home() {
         >
           {/* Dark semi-transparent overlay to match screenshot */}
           <div className="absolute inset-0 bg-slate-900/10" />
+          {/* Smooth shading/fade on the left edge to blend seamlessly into the #F8FAFC left side */}
+          <div className="absolute inset-y-0 left-0 w-[25%] bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC]/55 to-transparent z-10" />
         </div>
 
         <div className="container-page relative z-10 grid lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 items-stretch">
           {/* LEFT: Content, vertically centered */}
-          <div className="flex flex-col justify-center py-12 md:py-16 lg:py-24 lg:pr-8 relative z-10">
+          <div className="flex flex-col justify-center py-12 md:py-16 lg:py-14 xl:py-20 lg:pr-8 relative z-10">
             {/* Eyebrow */}
             <p className="text-[13px] sm:text-[14px] font-extrabold uppercase tracking-[0.15em] text-[#16a34a] mb-4">
               LONG-TERM FINANCE PARTNER
@@ -268,11 +269,11 @@ function Home() {
             </div>
 
             {/* Woman Cutout */}
-            <div className="relative lg:absolute lg:left-[2%] xl:left-[6%] lg:bottom-0 z-10 w-full max-w-[420px] mx-auto lg:max-w-none lg:w-[68%] xl:w-[72%] lg:h-[95%] xl:h-[98%] flex items-end justify-center lg:justify-start">
+            <div className="relative lg:absolute lg:left-[2%] xl:left-[6%] lg:bottom-0 z-10 w-full max-w-[420px] mx-auto lg:max-w-none lg:w-[60%] xl:w-[65%] lg:h-full flex items-end justify-center lg:justify-start">
               <img
                 src={heroSectionWoman}
                 alt="Bestline businesswoman specialist holding a tablet"
-                className="h-[380px] sm:h-[440px] md:h-[480px] lg:h-[92%] xl:h-[95%] w-auto object-contain object-bottom select-none pointer-events-none"
+                className="h-[380px] sm:h-[440px] md:h-[480px] lg:h-[480px] xl:h-[530px] 2xl:h-[580px] max-h-[90vh] w-auto object-contain object-bottom select-none pointer-events-none"
               />
             </div>
 
