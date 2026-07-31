@@ -14,11 +14,16 @@ import {
   CheckCircle2,
   FileCheck2,
   Clock,
+  User,
+  Folder,
+  Users,
+  BarChart3,
 } from "lucide-react";
 
-import heroWoman from "@/assets/hero-woman.png.asset.json";
-import whyChooseUs from "@/assets/why-choose-us.png.asset.json";
-import productsWoman from "@/assets/products-woman.png.asset.json";
+import whyChooseUsImg from "@/assets/why-choose-us.png";
+import weOfferImg from "@/assets/we-offer.png";
+import heroSectionWoman from "@/assets/hero-section.png";
+import heroBg from "@/assets/hero-bg.jpg";
 import { Layout } from "@/components/site/Layout";
 import { getProductIcon } from "@/lib/product-icons";
 import { getProductBadges } from "@/lib/product-details";
@@ -156,214 +161,245 @@ function Home() {
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-soft">
-        <div className="container-page py-12 lg:py-20">
-          {/* Top centered premium maroon statement */}
-          <div className="mb-6 md:mb-8 lg:mb-10 text-center">
-            <p
-              className="text-[#7A1E2C] text-[34px] sm:text-[40px] md:text-[44px] lg:text-[48px] xl:text-[52px] font-extrabold uppercase tracking-[0.06em] leading-[1.05]"
-              style={{
-                fontFamily: '"Montserrat", "Plus Jakarta Sans", "Inter", system-ui, sans-serif',
-              }}
-            >
-              “YOUR LONG TERM FINANCE PARTNER”
-            </p>
-          </div>
+      <section className="relative overflow-hidden bg-[#F8FAFC]">
+        {/* Diagonal split background for large screens */}
+        <div
+          className="absolute inset-y-0 right-0 hidden lg:block lg:w-[57%] xl:w-[54%] z-0"
+          style={{
+            clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0% 100%)",
+            backgroundImage: `url(${heroBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          {/* Dark semi-transparent overlay to match screenshot */}
+          <div className="absolute inset-0 bg-slate-900/10" />
+        </div>
 
-          <div className="grid gap-10 lg:gap-12 xl:gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center">
-            {/* LEFT: Content, vertically centered */}
-            <div className="flex flex-col justify-center max-w-xl xl:max-w-2xl">
-              <h1 className="mt-5 md:mt-6 text-lg md:text-xl lg:text-[1.65rem] xl:text-[1.95rem] leading-[1.5] md:leading-[1.55] text-foreground">
-                <span className="block mb-4 md:mb-5 text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
-                  We’re NOT Looking to Get You Money Just One Time...
-                </span>
-                <span className="block mb-4 md:mb-5 text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
-                  We Want to Be Your Long Term Finance Partner...
-                </span>
-                <span className="block mb-4 md:mb-5 text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
-                  And Build a Relationship With You
-                </span>
-                <span className="block text-[23px] md:text-[25px] lg:text-[32px] xl:text-[36px]">
-                  <span className="block">So We Can Get You Money</span>
-                  <span className="block">Whenever You Need It.</span>
-                </span>
-              </h1>
-              <p className="mt-8 md:mt-10 text-left text-[16px] md:text-[17px] font-bold text-[#A62D3D] leading-snug whitespace-nowrap">
-                ***We want to help you grow your business and increase your revenue
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-card transition hover:bg-primary-deep"
-                >
-                  Speak With a Specialist <ArrowRight className="size-4" />
-                </Link>
-              </div>
+        <div className="container-page relative z-10 grid lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 items-stretch">
+          {/* LEFT: Content, vertically centered */}
+          <div className="flex flex-col justify-center py-12 md:py-16 lg:py-24 lg:pr-8 relative z-10">
+            {/* Eyebrow */}
+            <p className="text-[13px] sm:text-[14px] font-extrabold uppercase tracking-[0.15em] text-[#16a34a] mb-4">
+              LONG-TERM FINANCE PARTNER
+            </p>
+
+            {/* Title */}
+            <h1 className="text-[38px] sm:text-[48px] md:text-[56px] lg:text-[62px] xl:text-[68px] font-extrabold text-[#0F172A] leading-[1.1] tracking-tight">
+              Your Long-Term <br />
+              <span className="text-[#A62D3D]">Finance Partner</span>
+            </h1>
+
+            {/* Green accent line */}
+            <div className="w-16 h-[5px] bg-[#16a34a] mt-5 mb-7 rounded-full" />
+
+            {/* Description */}
+            <p className="text-[#475569] text-[15px] sm:text-[16px] md:text-[17px] leading-relaxed max-w-xl mb-9">
+              We're not looking to get you money just one time. Bestline is here to be your
+              long-term finance partner, building a relationship that helps your business grow and
+              gives you access to capital whenever you need it.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 sm:mb-16">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#16a34a] px-6 py-3.5 text-base font-bold text-white shadow-md transition hover:bg-[#15803d]"
+              >
+                <User className="size-5 shrink-0" strokeWidth={2.2} />
+                Speak With a Specialist
+                <ArrowRight className="size-4 ml-1" />
+              </Link>
+              <Link
+                to="/funding-products"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#CBD5E1] bg-white px-6 py-3.5 text-base font-bold text-[#1F2937] shadow-sm transition hover:bg-slate-50 hover:border-slate-300"
+              >
+                <Folder className="size-5 shrink-0 text-[#16a34a]" strokeWidth={2.2} />
+                Explore Funding Products
+                <ArrowRight className="size-4 ml-1" />
+              </Link>
             </div>
 
-            {/* RIGHT: Unified image + cards module */}
-            <div className="relative">
-              {/* Soft shared background glow */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-primary/5 via-transparent to-accent/10 blur-xl"
+            {/* Bottom Row / Card */}
+            <div className="bg-white rounded-2xl border border-slate-200/80 p-5 md:p-6 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05),0_8px_10px_-6px_rgba(0,0,0,0.03)] flex flex-col md:flex-row items-stretch gap-6 md:gap-4 max-w-3xl">
+              <div className="flex items-center gap-4 flex-1">
+                <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-green-50 text-[#16a34a]">
+                  <ShieldCheck className="size-6" strokeWidth={1.8} />
+                </div>
+                <p className="text-[13px] md:text-sm font-bold text-slate-800 leading-snug">
+                  Trusted by Businesses Across the U.S.
+                </p>
+              </div>
+
+              <div className="hidden md:block w-px bg-slate-200 my-1 self-stretch" />
+
+              <div className="flex items-center gap-4 flex-1">
+                <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-green-50 text-[#16a34a]">
+                  <Users className="size-6" strokeWidth={1.8} />
+                </div>
+                <p className="text-[13px] md:text-sm font-bold text-slate-800 leading-snug">
+                  Long-Term Partnerships Built on Trust
+                </p>
+              </div>
+
+              <div className="hidden md:block w-px bg-slate-200 my-1 self-stretch" />
+
+              <div className="flex items-center gap-4 flex-1">
+                <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-green-50 text-[#16a34a]">
+                  <BarChart3 className="size-6" strokeWidth={1.8} />
+                </div>
+                <p className="text-[13px] md:text-sm font-bold text-slate-800 leading-snug">
+                  Flexible Solutions for Sustainable Growth
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT: Image container with cutout and floating cards */}
+          <div className="relative flex flex-col justify-end min-h-[500px] lg:min-h-0 lg:h-full z-10 mt-8 lg:mt-0">
+            {/* On mobile/tablet, this background serves as the column background */}
+            <div
+              className="absolute inset-0 lg:hidden z-0 rounded-2xl overflow-hidden bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${heroBg})`,
+              }}
+            >
+              <div className="absolute inset-0 bg-slate-950/30" />
+            </div>
+
+            {/* Woman Cutout */}
+            <div className="relative lg:absolute lg:left-[2%] xl:left-[6%] lg:bottom-0 z-10 w-full max-w-[420px] mx-auto lg:max-w-none lg:w-[68%] xl:w-[72%] lg:h-[95%] xl:h-[98%] flex items-end justify-center lg:justify-start">
+              <img
+                src={heroSectionWoman}
+                alt="Bestline businesswoman specialist holding a tablet"
+                className="h-[380px] sm:h-[440px] md:h-[480px] lg:h-[92%] xl:h-[95%] w-auto object-contain object-bottom select-none pointer-events-none"
               />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -top-4 -right-4 h-32 w-32 rounded-full bg-primary/10 blur-2xl"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -bottom-4 -left-4 h-28 w-28 rounded-full bg-accent/20 blur-2xl"
-              />
+            </div>
 
-              {/* Unified module: shared panel wrapping image + cards */}
-              <div className="relative rounded-[2rem] border border-border/70 bg-background/60 backdrop-blur-sm p-3 sm:p-4 shadow-elevated">
-                <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-3 sm:gap-3.5 items-stretch">
-                  {/* Image card */}
-                  <div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#EEF3F7] to-[#F7F8FC] shadow-card border border-border/60 aspect-[4/5] sm:aspect-auto sm:min-h-[480px] flex items-end justify-center">
-                    <div
-                      aria-hidden
-                      className="absolute -right-10 top-8 h-48 w-48 rounded-[2rem] bg-primary/10 rotate-12"
-                    />
-                    <div
-                      aria-hidden
-                      className="absolute -left-8 -bottom-10 h-36 w-36 rounded-full bg-primary-deep/15"
-                    />
-                    <img
-                      src={heroWoman.url}
-                      alt="Bestline business funding specialist reviewing options on a tablet"
-                      className="relative h-full w-full object-cover object-top"
-                    />
-                  </div>
+            {/* Floating cards stacked on the right side */}
+            <div className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-3.5 w-[220px] sm:w-[245px] md:w-[270px]">
+              {/* Card 1 */}
+              <div className="bg-white rounded-2xl p-4 shadow-[0_10px_20px_-3px_rgba(0,0,0,0.06),0_4px_6px_-2px_rgba(0,0,0,0.03)] border border-[#F1F5F9]/50 flex items-center gap-3 sm:gap-4 transition hover:-translate-y-0.5 hover:shadow-2xl">
+                <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-[#A62D3D] text-white">
+                  <TrendingUp className="size-5" strokeWidth={2.2} />
+                </div>
+                <div>
+                  <p className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider leading-none">
+                    Available Up To
+                  </p>
+                  <p className="text-[18px] sm:text-xl md:text-2xl font-black text-slate-800 mt-1 sm:mt-1.5 leading-none">
+                    $20M
+                  </p>
+                </div>
+              </div>
 
-                  {/* Cards stack - equal spacing, matches image height */}
-                  <div className="grid grid-rows-4 gap-3 sm:gap-3.5">
-                    {/* Card 1 */}
-                    <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
-                      <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
-                        <TrendingUp className="size-5" strokeWidth={1.75} />
-                      </div>
-                      <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">
-                        Available Up To $20M
-                      </p>
-                    </div>
+              {/* Card 2 */}
+              <div className="bg-white rounded-2xl p-4 shadow-[0_10px_20px_-3px_rgba(0,0,0,0.06),0_4px_6px_-2px_rgba(0,0,0,0.03)] border border-[#F1F5F9]/50 flex items-center gap-3 sm:gap-4 transition hover:-translate-y-0.5 hover:shadow-2xl">
+                <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-[#A62D3D] text-white">
+                  <Clock className="size-5" strokeWidth={2.2} />
+                </div>
+                <div>
+                  <p className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider leading-none">
+                    Terms Up To
+                  </p>
+                  <p className="text-[18px] sm:text-xl md:text-2xl font-black text-slate-800 mt-1 sm:mt-1.5 leading-none">
+                    25 Years
+                  </p>
+                </div>
+              </div>
 
-                    {/* Card 2 */}
-                    <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
-                      <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
-                        <Clock className="size-5" strokeWidth={1.75} />
-                      </div>
-                      <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">
-                        Terms Up To 25 Years
-                      </p>
-                    </div>
+              {/* Card 3 */}
+              <div className="bg-white rounded-2xl p-4 shadow-[0_10px_20px_-3px_rgba(0,0,0,0.06),0_4px_6px_-2px_rgba(0,0,0,0.03)] border border-[#F1F5F9]/50 flex items-center gap-3 sm:gap-4 transition hover:-translate-y-0.5 hover:shadow-2xl">
+                <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-[#A62D3D] text-white">
+                  <Zap className="size-5" strokeWidth={2.2} />
+                </div>
+                <div>
+                  <p className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider leading-none">
+                    Fast
+                  </p>
+                  <p className="text-[18px] sm:text-xl md:text-2xl font-black text-slate-800 mt-1 sm:mt-1.5 leading-none">
+                    Approvals
+                  </p>
+                </div>
+              </div>
 
-                    {/* Card 3 */}
-                    <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
-                      <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
-                        <Zap className="size-5" strokeWidth={1.75} />
-                      </div>
-                      <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">
-                        Fast Approvals
-                      </p>
-                    </div>
-
-                    {/* Card 4 */}
-                    <div className="rounded-2xl bg-background border border-border shadow-card p-4 lg:p-5 flex items-center gap-3 lg:gap-4 transition hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/30">
-                      <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30">
-                        <FileCheck2 className="size-5" strokeWidth={1.75} />
-                      </div>
-                      <p className="text-base sm:text-lg lg:text-[1.125rem] xl:text-[1.25rem] font-bold text-foreground leading-tight">
-                        Minimal Documentation
-                      </p>
-                    </div>
-                  </div>
+              {/* Card 4 */}
+              <div className="bg-white rounded-2xl p-4 shadow-[0_10px_20px_-3px_rgba(0,0,0,0.06),0_4px_6px_-2px_rgba(0,0,0,0.03)] border border-[#F1F5F9]/50 flex items-center gap-3 sm:gap-4 transition hover:-translate-y-0.5 hover:shadow-2xl">
+                <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-[#A62D3D] text-white">
+                  <FileCheck2 className="size-5" strokeWidth={2.2} />
+                </div>
+                <div>
+                  <p className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider leading-none">
+                    Minimal
+                  </p>
+                  <p className="text-[18px] sm:text-xl md:text-2xl font-black text-slate-800 mt-1 sm:mt-1.5 leading-none">
+                    Documentation
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* TRUST BAR */}
-      <section className="border-y border-border bg-background">
-        <div className="container-page py-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[18px] md:text-[19px] font-medium text-foreground">
-          {trustItems.map((t, i) => (
-            <div key={t} className="flex items-center gap-2.5">
-              <span className="text-black">*</span>
-              <span>{t}</span>
-              {i < trustItems.length - 1 && (
-                <span className="hidden md:inline w-px h-3.5 bg-border ml-4" />
-              )}
-            </div>
-          ))}
         </div>
       </section>
 
       {/* WHY */}
-      <section className="bg-gradient-soft py-10 md:py-12">
-        <div className="container-page">
-          <div className="grid gap-6 lg:gap-8 lg:grid-cols-2 lg:items-stretch">
-            {/* LEFT: Image */}
-            <div className="relative flex flex-col">
-              <div aria-hidden className="hidden lg:block invisible">
-                <div className="max-w-2xl">
-                  <h2 className="text-3xl md:text-4xl font-bold">Why Businesses Choose Bestline</h2>
-                  <p className="mt-4">
-                    A relationship-based commercial finance partner — built around how business
-                    owners actually access and grow capital.
-                  </p>
-                </div>
-                <div className="mt-6" />
-              </div>
-              <div className="relative flex-1">
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-primary/5 via-transparent to-accent/10 blur-xl"
-                />
-                <div className="relative h-full rounded-[2rem] border border-border/70 bg-background/60 backdrop-blur-sm p-3 sm:p-4 shadow-elevated">
-                  <div className="relative h-full rounded-2xl overflow-hidden shadow-card border border-border/60 aspect-[4/5] lg:aspect-auto">
-                    <img
-                      src={whyChooseUs.url}
-                      alt="Businesswoman presenting why choose Bestline"
-                      className="h-full w-full object-cover object-left-top"
-                    />
-                  </div>
-                </div>
-              </div>
+      <section className="relative overflow-hidden bg-[#F8FAFC] border-t border-slate-100">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] xl:grid-cols-[0.95fr_1.05fr] items-stretch">
+          {/* LEFT: Image with cityscape and woman */}
+          <div className="relative min-h-[420px] sm:min-h-[500px] lg:min-h-0 w-full h-full overflow-hidden">
+            {/* The base image (cityscape + woman pointing glowing glass) */}
+            <img
+              src={whyChooseUsImg}
+              alt="Why Choose Us cityscape background with specialist pointing forward"
+              className="absolute inset-0 w-full h-full object-cover object-[center_20%] lg:object-center select-none"
+            />
+            {/* Smooth, subtle linear gradient overlay to fade image edge to match background color responsively */}
+            <div className="absolute inset-x-0 bottom-0 lg:top-0 lg:bottom-auto lg:right-0 lg:inset-x-auto h-20 lg:h-full lg:w-[16%] bg-gradient-to-b lg:bg-gradient-to-r from-transparent via-[#F8FAFC]/25 to-[#F8FAFC] z-10" />
+          </div>
+
+          {/* RIGHT: Content + 3x2 cards grid */}
+          <div className="flex flex-col justify-center py-12 px-6 sm:px-8 lg:py-20 lg:pl-8 lg:pr-16 relative z-10">
+            <div className="max-w-2xl">
+              {/* Eyebrow */}
+              <p className="text-[13px] sm:text-[14px] font-extrabold uppercase tracking-[0.15em] text-[#16a34a] mb-2.5">
+                WHY CHOOSE BESTLINE
+              </p>
+
+              {/* Title */}
+              <h2 className="text-[30px] sm:text-[36px] md:text-[40px] font-black text-slate-800 leading-tight">
+                Why Businesses Choose Bestline
+              </h2>
+
+              {/* Red Accent Bar */}
+              <div className="w-14 h-1 bg-[#A62D3D] mt-3.5 mb-5 rounded-full" />
+
+              {/* Description */}
+              <p className="text-[#475569] text-[15px] sm:text-base leading-relaxed">
+                A relationship-based commercial finance partner — built around how business owners
+                actually access and grow capital.
+              </p>
             </div>
 
-            {/* RIGHT: Content + cards */}
-            <div className="flex flex-col">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                  Why Businesses Choose Bestline
-                </h2>
-                <div aria-hidden className="mt-2.5 h-1 w-16 rounded-full bg-[#A62D3D]" />
-                <p className="mt-4 text-muted-foreground">
-                  A relationship-based commercial finance partner — built around how business owners
-                  actually access and grow capital.
-                </p>
-              </div>
-              <div className="mt-6 flex-1 grid gap-4 sm:grid-cols-2 auto-rows-fr">
-                {whyCards.map(({ icon: Icon, title, text }) => (
-                  <div
-                    key={title}
-                    className="group flex flex-col justify-center rounded-xl border border-border bg-background px-5 py-5 shadow-card transition hover:-translate-y-0.5 hover:shadow-elevated"
-                  >
+            {/* Grid of 6 cards */}
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {whyCards.map(({ icon: Icon, title, text }) => (
+                <div
+                  key={title}
+                  className="bg-white rounded-2xl p-5 border border-slate-200/50 shadow-[0_4px_15px_-3px_rgba(0,0,0,0.03)] flex flex-col justify-between transition hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-4px_rgba(0,0,0,0.06)]"
+                >
+                  <div>
                     <div className="flex items-center gap-3">
-                      <div className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#A62D3D] text-white">
-                        <Icon className="size-4" />
+                      <div className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#7A1E2C] text-white">
+                        <Icon className="size-5" strokeWidth={2} />
                       </div>
-                      <h3 className="text-base font-semibold text-foreground leading-snug">
-                        {title}
-                      </h3>
+                      <h3 className="text-base font-bold text-slate-800 leading-snug">{title}</h3>
                     </div>
-                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{text}</p>
+                    <p className="mt-3 text-xs sm:text-[13px] text-slate-500 leading-relaxed">
+                      {text}
+                    </p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -373,20 +409,40 @@ function Home() {
       <div className="h-6 bg-background" aria-hidden="true" />
 
       {/* PRODUCTS */}
-      <section className="pt-4 pb-12 md:pt-5 md:pb-14 bg-gradient-soft">
-        <div className="container-page">
-          <div className="grid gap-6 lg:gap-10 lg:grid-cols-2 lg:items-stretch">
+      <section className="relative py-12 md:py-16 bg-[#F8FAFC] overflow-hidden">
+        {/* Flush Top-Right Image Column */}
+        <div className="relative lg:absolute w-full lg:w-[46%] xl:w-[48%] h-[350px] lg:h-[60%] xl:h-[64%] lg:top-0 lg:right-0 mt-8 lg:mt-0 overflow-hidden z-0">
+          <img
+            src={weOfferImg}
+            alt="Pointing woman presenting Bestline funding products"
+            className="w-full h-full object-cover object-center select-none"
+          />
+          {/* Smooth linear gradient overlay to fade left side of image responsively */}
+          <div className="absolute inset-y-0 left-0 w-[20%] lg:w-[25%] bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC]/40 to-transparent z-10" />
+          {/* Smooth linear gradient overlay to fade bottom side of image responsively */}
+          <div className="absolute inset-x-0 bottom-0 h-[25%] bg-gradient-to-b from-transparent via-[#F8FAFC]/50 to-[#F8FAFC] z-10" />
+        </div>
+
+        <div className="container-page relative z-10">
+          <div className="grid gap-8 lg:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             {/* LEFT: Heading + subtitle + compact highlight panel */}
-            <div className="flex flex-col h-full max-w-xl">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Products We Offer</h2>
-              <div aria-hidden className="mt-2.5 h-1 w-16 rounded-full bg-[#A62D3D]" />
-              <p className="mt-4 text-[15px] md:text-base text-muted-foreground leading-relaxed max-w-[520px]">
+            <div className="flex flex-col h-full max-w-2xl">
+              {/* Eyebrow */}
+              <p className="text-[13px] sm:text-[14px] font-extrabold uppercase tracking-[0.15em] text-[#16a34a] mb-2.5">
+                FUNDING SOLUTIONS
+              </p>
+
+              <h2 className="text-[30px] sm:text-[36px] md:text-[40px] font-black text-slate-800 leading-tight">
+                Products We Offer
+              </h2>
+              <div className="w-14 h-1 bg-[#A62D3D] mt-3.5 mb-5 rounded-full" />
+              <p className="text-[#475569] text-[15px] sm:text-base leading-relaxed">
                 Explore flexible funding options designed to help businesses access capital, improve
                 cash flow, and plan for growth.
               </p>
 
-              {/* Inline highlight row — circular icon + two-line label */}
-              <div className="mt-5 flex-1 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+              {/* Inline highlight row — 2x2 grid of trust badges */}
+              <div className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2">
                 {[
                   { icon: CheckCircle2, label: "90% Approval Rate", sub: "High approval success" },
                   { icon: Clock, label: "Accept Every Industry", sub: "Most industries welcome" },
@@ -397,82 +453,79 @@ function Home() {
                     sub: "Funding for all profiles",
                   },
                 ].map(({ icon: Icon, label, sub }) => (
-                  <div key={label} className="flex items-center gap-3.5 min-w-0">
-                    <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-[#A62D3D] text-white">
+                  <div
+                    key={label}
+                    className="bg-white rounded-2xl p-4 border border-slate-200/50 shadow-[0_4px_12px_rgba(0,0,0,0.02)] flex items-center gap-3.5"
+                  >
+                    <div className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-[#A62D3D] text-white">
                       <Icon className="size-5" strokeWidth={2} />
                     </div>
-                    <div className="min-w-0">
-                      <p className="text-base md:text-lg font-bold text-foreground leading-tight">
-                        {label}
-                      </p>
-                      <p className="text-sm md:text-[15px] text-muted-foreground leading-tight">
-                        {sub}
-                      </p>
+                    <div>
+                      <p className="text-sm font-extrabold text-slate-800 leading-tight">{label}</p>
+                      <p className="text-xs text-slate-500 mt-0.5 leading-none">{sub}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* RIGHT: Image aligned with left content */}
-            <div className="relative">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-primary/5 via-transparent to-accent/10 blur-xl"
-              />
-              <div className="relative h-full rounded-[2rem] border border-border/70 bg-background/60 backdrop-blur-sm p-3 sm:p-4 shadow-elevated">
-                <div className="relative h-full rounded-2xl overflow-hidden shadow-card border border-border/60 aspect-[4/3] md:aspect-[16/10] lg:aspect-auto">
-                  <img
-                    src={productsWoman.url}
-                    alt="Bestline funding specialist presenting business funding products"
-                    className="h-full w-full object-cover object-top"
-                  />
-                </div>
-              </div>
-            </div>
+            {/* RIGHT: Empty placeholder to reserve space on desktop */}
+            <div className="hidden lg:block lg:h-[420px]" aria-hidden="true" />
           </div>
 
-          <div className="mt-8 md:mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((p) => {
+          {/* Sliced first 3 product cards matching the screenshot */}
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {products.slice(0, 3).map((p) => {
               const Icon = getProductIcon(p.title);
               const badges = getProductBadges(p.title);
               return (
                 <article
                   key={p.title}
-                  className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-elevated"
+                  className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05),0_8px_10px_-6px_rgba(0,0,0,0.03)] flex flex-col justify-between h-full transition hover:-translate-y-0.5 hover:shadow-2xl"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex size-10 items-center justify-center rounded-lg bg-[#A62D3D] text-white ring-1 ring-[#A62D3D]/30 transition group-hover:bg-[#A62D3D]/90">
-                      <Icon className="size-5" strokeWidth={1.75} />
+                  <div>
+                    {/* Header: square icon + title */}
+                    <div className="flex items-center gap-4">
+                      <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#7A1E2C] text-white shadow-md">
+                        <Icon className="size-5" strokeWidth={2} />
+                      </div>
+                      <h3 className="text-xl font-black text-slate-800">{p.title}</h3>
                     </div>
-                    <h3 className="text-lg font-bold text-foreground">{p.title}</h3>
+
+                    {/* Green Badges */}
+                    {badges.length > 0 && (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {badges.map((b) => (
+                          <span
+                            key={b.label}
+                            className="inline-flex items-center rounded-full bg-[#137333] px-3 py-1 text-xs font-bold text-white"
+                          >
+                            {b.label}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Description */}
+                    <p className="mt-4 text-sm text-slate-500 leading-relaxed">{p.text}</p>
                   </div>
-                  {badges.length > 0 && (
-                    <div className="mt-4 flex flex-wrap gap-1.5">
-                      {badges.map((b) => (
-                        <span
-                          key={b.label}
-                          className="inline-flex items-center whitespace-nowrap rounded-full bg-primary px-2 py-1 text-xs font-semibold text-primary-foreground"
-                        >
-                          {b.label}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.text}</p>
-                  <div className="mt-auto pt-5 flex items-center gap-4 text-sm">
+
+                  {/* Footer links */}
+                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center text-sm font-bold">
                     <Link
                       to="/funding-products"
-                      className="font-semibold text-primary hover:underline"
+                      className="text-[#16a34a] hover:text-[#15803d] flex items-center gap-1.5"
                     >
                       Learn More
+                      <span className="text-[10px] font-bold">&gt;</span>
                     </Link>
-                    <span className="text-border">•</span>
+                    <div className="w-px h-4 bg-slate-200 mx-4" />
                     <Link
                       to="/contact"
-                      className="font-semibold text-foreground hover:text-primary"
+                      className="text-[#1F2937] hover:text-[#A62D3D] flex items-center gap-1.5"
                     >
                       Contact Us
+                      <span className="text-[10px] font-bold">&gt;</span>
                     </Link>
                   </div>
                 </article>
