@@ -345,7 +345,7 @@ function Home() {
 
       {/* WHY */}
       <section className="relative overflow-hidden bg-[#F8FAFC] border-t border-slate-100">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] xl:grid-cols-[0.95fr_1.05fr] items-stretch">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] xl:grid-cols-[0.95fr_1.05fr] items-stretch lg:h-[550px] xl:h-[620px] 2xl:h-[660px]">
           {/* LEFT: Image with cityscape and woman */}
           <div className="relative min-h-[420px] sm:min-h-[500px] lg:min-h-0 w-full h-full overflow-hidden">
             {/* The base image (cityscape + woman pointing glowing glass) */}
@@ -359,7 +359,7 @@ function Home() {
           </div>
 
           {/* RIGHT: Content + 3x2 cards grid */}
-          <div className="flex flex-col justify-center py-12 px-6 sm:px-8 lg:py-20 lg:pl-8 lg:pr-16 relative z-10">
+          <div className="flex flex-col justify-center py-12 px-6 sm:px-8 lg:py-0 lg:pl-8 lg:pr-16 relative z-10">
             <div className="max-w-2xl">
               {/* Eyebrow */}
               <p className="text-[13px] sm:text-[14px] font-extrabold uppercase tracking-[0.15em] text-[#16a34a] mb-2.5">
@@ -412,7 +412,7 @@ function Home() {
       {/* PRODUCTS */}
       <section className="relative py-12 md:py-16 bg-[#F8FAFC] overflow-hidden">
         {/* Flush Top-Right Image Column */}
-        <div className="relative lg:absolute w-full lg:w-[46%] xl:w-[48%] h-[350px] lg:h-[60%] xl:h-[64%] lg:top-0 lg:right-0 mt-8 lg:mt-0 overflow-hidden z-0">
+        <div className="relative lg:absolute w-full lg:w-[46%] xl:w-[48%] h-[350px] lg:h-[480px] xl:h-[530px] lg:top-0 lg:right-0 mt-8 lg:mt-0 overflow-hidden z-0">
           <img
             src={weOfferImg}
             alt="Pointing woman presenting Bestline funding products"
@@ -425,7 +425,7 @@ function Home() {
         </div>
 
         <div className="container-page relative z-10">
-          <div className="grid gap-8 lg:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="grid gap-8 lg:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:h-[480px] xl:h-[530px]">
             {/* LEFT: Heading + subtitle + compact highlight panel */}
             <div className="flex flex-col h-full max-w-2xl">
               {/* Eyebrow */}
