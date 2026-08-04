@@ -162,10 +162,11 @@ function Home() {
     <Layout>
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#F8FAFC]">
-        {/* Shaded split background for large screens */}
+        {/* Diagonal split background for large screens */}
         <div
           className="absolute inset-y-0 right-0 hidden lg:block lg:w-[57%] xl:w-[54%] z-0"
           style={{
+            clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0% 100%)",
             backgroundImage: `url(${heroBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -173,13 +174,11 @@ function Home() {
         >
           {/* Dark semi-transparent overlay to match screenshot */}
           <div className="absolute inset-0 bg-slate-900/10" />
-          {/* Smooth shading/fade on the left edge to blend seamlessly into the #F8FAFC left side */}
-          <div className="absolute inset-y-0 left-0 w-[25%] bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC]/55 to-transparent z-10" />
         </div>
 
         <div className="container-page relative z-10 grid lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 items-stretch">
           {/* LEFT: Content, vertically centered */}
-          <div className="flex flex-col justify-center py-12 md:py-16 lg:py-14 xl:py-20 lg:pr-8 relative z-10">
+          <div className="flex flex-col justify-center py-12 md:py-16 lg:py-24 lg:pr-8 relative z-10">
             {/* Eyebrow */}
             <p className="text-[13px] sm:text-[14px] font-extrabold uppercase tracking-[0.15em] text-[#16a34a] mb-4">
               LONG-TERM FINANCE PARTNER
@@ -269,11 +268,11 @@ function Home() {
             </div>
 
             {/* Woman Cutout */}
-            <div className="relative lg:absolute lg:left-[2%] xl:left-[6%] lg:bottom-0 z-10 w-full max-w-[420px] mx-auto lg:max-w-none lg:w-[60%] xl:w-[65%] lg:h-full flex items-end justify-center lg:justify-start">
+            <div className="relative lg:absolute lg:left-[2%] xl:left-[6%] lg:bottom-0 z-10 w-full max-w-[420px] mx-auto lg:max-w-none lg:w-[68%] xl:w-[72%] lg:h-[95%] xl:h-[98%] flex items-end justify-center lg:justify-start">
               <img
                 src={heroSectionWoman}
                 alt="Bestline businesswoman specialist holding a tablet"
-                className="h-[380px] sm:h-[440px] md:h-[480px] lg:h-[480px] xl:h-[530px] 2xl:h-[580px] max-h-[90vh] w-auto object-contain object-bottom select-none pointer-events-none"
+                className="h-[380px] sm:h-[440px] md:h-[480px] lg:h-[92%] xl:h-[95%] w-auto object-contain object-bottom select-none pointer-events-none"
               />
             </div>
 
@@ -345,7 +344,7 @@ function Home() {
 
       {/* WHY */}
       <section className="relative overflow-hidden bg-[#F8FAFC] border-t border-slate-100">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] xl:grid-cols-[0.95fr_1.05fr] items-stretch lg:h-[550px] xl:h-[620px] 2xl:h-[660px]">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] xl:grid-cols-[0.95fr_1.05fr] items-stretch">
           {/* LEFT: Image with cityscape and woman */}
           <div className="relative min-h-[420px] sm:min-h-[500px] lg:min-h-0 w-full h-full overflow-hidden">
             {/* The base image (cityscape + woman pointing glowing glass) */}
@@ -359,7 +358,7 @@ function Home() {
           </div>
 
           {/* RIGHT: Content + 3x2 cards grid */}
-          <div className="flex flex-col justify-center py-12 px-6 sm:px-8 lg:py-0 lg:pl-8 lg:pr-16 relative z-10">
+          <div className="flex flex-col justify-center py-12 px-6 sm:px-8 lg:py-20 lg:pl-8 lg:pr-16 relative z-10">
             <div className="max-w-2xl">
               {/* Eyebrow */}
               <p className="text-[13px] sm:text-[14px] font-extrabold uppercase tracking-[0.15em] text-[#16a34a] mb-2.5">
@@ -412,7 +411,7 @@ function Home() {
       {/* PRODUCTS */}
       <section className="relative py-12 md:py-16 bg-[#F8FAFC] overflow-hidden">
         {/* Flush Top-Right Image Column */}
-        <div className="relative lg:absolute w-full lg:w-[46%] xl:w-[48%] h-[350px] lg:h-[480px] xl:h-[530px] lg:top-0 lg:right-0 mt-8 lg:mt-0 overflow-hidden z-0">
+        <div className="relative lg:absolute w-full lg:w-[46%] xl:w-[48%] h-[350px] lg:h-[60%] xl:h-[64%] lg:top-0 lg:right-0 mt-8 lg:mt-0 overflow-hidden z-0">
           <img
             src={weOfferImg}
             alt="Pointing woman presenting Bestline funding products"
@@ -425,7 +424,7 @@ function Home() {
         </div>
 
         <div className="container-page relative z-10">
-          <div className="grid gap-8 lg:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:h-[480px] xl:h-[530px]">
+          <div className="grid gap-8 lg:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             {/* LEFT: Heading + subtitle + compact highlight panel */}
             <div className="flex flex-col h-full max-w-2xl">
               {/* Eyebrow */}
